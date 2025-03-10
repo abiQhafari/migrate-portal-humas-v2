@@ -1,0 +1,652 @@
+[
+    {
+        "data": {
+            "id": 1,
+            "name": "Desa Tajinans",
+            "type": "group",
+            "user_id": 17
+        },
+        "error": "Error creating groupchat 'Desa Tajinans': User with ID 17 not found",
+        "timestamp": "2025-03-05T14:40:01.728630"
+    },
+    {
+        "data": {
+            "id": 2,
+            "name": "Desa Kepanjen",
+            "type": "group",
+            "user_id": 17
+        },
+        "error": "Error creating groupchat 'Desa Kepanjen': User with ID 17 not found",
+        "timestamp": "2025-03-05T14:40:01.728725"
+    },
+    {
+        "data": {
+            "id": 3,
+            "name": "Desa Cemorokandang",
+            "type": "group",
+            "user_id": 17
+        },
+        "error": "Error creating groupchat 'Desa Cemorokandang': User with ID 17 not found",
+        "timestamp": "2025-03-05T14:40:01.728785"
+    },
+    {
+        "data": {
+            "id": 5,
+            "name": "Desa Tajinan",
+            "type": "group",
+            "user_id": 17
+        },
+        "error": "Error creating groupchat 'Desa Tajinan': User with ID 17 not found",
+        "timestamp": "2025-03-05T14:40:01.728831"
+    },
+    {
+        "data": {
+            "id": 6,
+            "name": "Retas Mobile Legend",
+            "type": "group",
+            "user_id": 34
+        },
+        "error": "Error creating groupchat 'Retas Mobile Legend': User with ID 34 not found",
+        "timestamp": "2025-03-05T14:40:01.728878"
+    },
+    {
+        "data": {
+            "id": 7,
+            "name": "Restas ML",
+            "type": "channel",
+            "user_id": 34
+        },
+        "error": "Error creating groupchat 'Restas ML': User with ID 34 not found",
+        "timestamp": "2025-03-05T14:40:01.728923"
+    },
+    {
+        "data": {
+            "id": 11,
+            "name": "Desa Trosobo Utama",
+            "type": "group",
+            "user_id": 34
+        },
+        "error": "Error creating groupchat 'Desa Trosobo Utama': User with ID 34 not found",
+        "timestamp": "2025-03-05T14:40:01.728965"
+    },
+    {
+        "data": {
+            "id": 12,
+            "name": "Group 1",
+            "type": "group",
+            "user_id": 20
+        },
+        "error": "Error creating groupchat 'Group 1': User with ID 20 not found",
+        "timestamp": "2025-03-05T14:40:01.729006"
+    },
+    {
+        "data": {
+            "id": 13,
+            "name": "Group 2",
+            "type": "group",
+            "user_id": 20
+        },
+        "error": "Error creating groupchat 'Group 2': User with ID 20 not found",
+        "timestamp": "2025-03-05T14:40:01.729050"
+    },
+    {
+        "data": {
+            "id": 14,
+            "name": "Group Channel 1",
+            "type": "channel",
+            "user_id": 20
+        },
+        "error": "Error creating groupchat 'Group Channel 1': User with ID 20 not found",
+        "timestamp": "2025-03-05T14:40:01.729091"
+    },
+    {
+        "data": {
+            "id": 15,
+            "name": "WA RT 05",
+            "type": "group",
+            "user_id": 52
+        },
+        "error": "Error creating groupchat 'WA RT 05': User with ID 52 not found",
+        "timestamp": "2025-03-05T14:40:01.729135"
+    },
+    {
+        "data": {
+            "id": 16,
+            "name": "Channel malang Raya",
+            "type": "channel",
+            "user_id": 17
+        },
+        "error": "Error creating groupchat 'Channel malang Raya': User with ID 17 not found",
+        "timestamp": "2025-03-05T14:40:01.729176"
+    },
+    {
+        "data": {
+            "id": 17,
+            "name": "Keluarga",
+            "type": "group",
+            "user_id": 86
+        },
+        "error": "Error creating groupchat 'Keluarga': User with ID 86 not found",
+        "timestamp": "2025-03-05T14:40:01.729219"
+    },
+    {
+        "data": {
+            "id": 18,
+            "name": "@dharukun akun instagram",
+            "type": "group",
+            "user_id": 52
+        },
+        "error": "Error creating groupchat '@dharukun akun instagram': User with ID 52 not found",
+        "timestamp": "2025-03-05T14:40:01.729260"
+    },
+    {
+        "data": {
+            "id": 19,
+            "name": "de cassa family - malang",
+            "type": "group",
+            "user_id": 52
+        },
+        "error": "Error creating groupchat 'de cassa family - malang': User with ID 52 not found",
+        "timestamp": "2025-03-05T14:40:01.729304"
+    },
+    {
+        "data": {
+            "id": 20,
+            "name": "RT ku",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'RT ku': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:01.729345"
+    },
+    {
+        "data": {
+            "id": 23,
+            "name": "Divisi Humas",
+            "type": "group",
+            "user_id": 138
+        },
+        "error": "Error creating groupchat 'Divisi Humas': User with ID 138 not found",
+        "timestamp": "2025-03-05T14:40:01.729386"
+    },
+    {
+        "data": {
+            "id": 25,
+            "name": "Grup Bapak-bapak RT",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'Grup Bapak-bapak RT': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:01.729427"
+    },
+    {
+        "data": {
+            "id": 27,
+            "name": "PEMEGANG RANMOR",
+            "type": "group",
+            "user_id": 292
+        },
+        "error": "Error creating groupchat 'PEMEGANG RANMOR': User with ID 292 not found",
+        "timestamp": "2025-03-05T14:40:01.729468"
+    },
+    {
+        "data": {
+            "id": 28,
+            "name": "grup piket",
+            "type": "group",
+            "user_id": 282
+        },
+        "error": "Error creating groupchat 'grup piket': User with ID 282 not found",
+        "timestamp": "2025-03-05T14:40:01.729508"
+    },
+    {
+        "data": {
+            "id": 29,
+            "name": "grup piket",
+            "type": "group",
+            "user_id": 298
+        },
+        "error": "Error creating groupchat 'grup piket': User with ID 298 not found",
+        "timestamp": "2025-03-05T14:40:01.729549"
+    },
+    {
+        "data": {
+            "id": 30,
+            "name": "Grup Bapak Bapak",
+            "type": "group",
+            "user_id": 287
+        },
+        "error": "Error creating groupchat 'Grup Bapak Bapak': User with ID 287 not found",
+        "timestamp": "2025-03-05T14:40:01.729590"
+    },
+    {
+        "data": {
+            "id": 31,
+            "name": "GRUP URKEU",
+            "type": "group",
+            "user_id": 293
+        },
+        "error": "Error creating groupchat 'GRUP URKEU': User with ID 293 not found",
+        "timestamp": "2025-03-05T14:40:01.729630"
+    },
+    {
+        "data": {
+            "id": 32,
+            "name": "TAUD",
+            "type": "group",
+            "user_id": 300
+        },
+        "error": "Error creating groupchat 'TAUD': User with ID 300 not found",
+        "timestamp": "2025-03-05T14:40:01.729670"
+    },
+    {
+        "data": {
+            "id": 33,
+            "name": "Subbag Binfung",
+            "type": "group",
+            "user_id": 289
+        },
+        "error": "Error creating groupchat 'Subbag Binfung': User with ID 289 not found",
+        "timestamp": "2025-03-05T14:40:02.127633"
+    },
+    {
+        "data": {
+            "id": 34,
+            "name": "SUBBAG BINFUNG",
+            "type": "group",
+            "user_id": 291
+        },
+        "error": "Error creating groupchat 'SUBBAG BINFUNG': User with ID 291 not found",
+        "timestamp": "2025-03-05T14:40:02.127714"
+    },
+    {
+        "data": {
+            "id": 37,
+            "name": "Urkeu",
+            "type": "group",
+            "user_id": 296
+        },
+        "error": "Error creating groupchat 'Urkeu': User with ID 296 not found",
+        "timestamp": "2025-03-05T14:40:02.436652"
+    },
+    {
+        "data": {
+            "id": 38,
+            "name": "Taud divhumas polri",
+            "type": "group",
+            "user_id": 297
+        },
+        "error": "Error creating groupchat 'Taud divhumas polri': User with ID 297 not found",
+        "timestamp": "2025-03-05T14:40:02.436708"
+    },
+    {
+        "data": {
+            "id": 40,
+            "name": "WA RT05",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'WA RT05': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:02.583568"
+    },
+    {
+        "data": {
+            "id": 41,
+            "name": "Grup Betawi Family",
+            "type": "group",
+            "user_id": 1007
+        },
+        "error": "Error creating groupchat 'Grup Betawi Family': User with ID 1007 not found",
+        "timestamp": "2025-03-05T14:40:02.583625"
+    },
+    {
+        "data": {
+            "id": 45,
+            "name": "FAMS",
+            "type": "group",
+            "user_id": 210
+        },
+        "error": "Error creating groupchat 'FAMS': User with ID 210 not found",
+        "timestamp": "2025-03-05T14:40:02.895602"
+    },
+    {
+        "data": {
+            "id": 48,
+            "name": "La",
+            "type": "group",
+            "user_id": 324
+        },
+        "error": "Error creating groupchat 'La': User with ID 324 not found",
+        "timestamp": "2025-03-05T14:40:03.540690"
+    },
+    {
+        "data": {
+            "id": 49,
+            "name": "Keluargaku",
+            "type": "group",
+            "user_id": 999
+        },
+        "error": "Error creating groupchat 'Keluargaku': User with ID 999 not found",
+        "timestamp": "2025-03-05T14:40:03.540745"
+    },
+    {
+        "data": {
+            "id": 51,
+            "name": "Keluarga Djadmijan",
+            "type": "group",
+            "user_id": 954
+        },
+        "error": "Error creating groupchat 'Keluarga Djadmijan': User with ID 954 not found",
+        "timestamp": "2025-03-05T14:40:03.687008"
+    },
+    {
+        "data": {
+            "id": 52,
+            "name": "Adiguna Laksana Yuwawira",
+            "type": "group",
+            "user_id": 156
+        },
+        "error": "Error creating groupchat 'Adiguna Laksana Yuwawira': User with ID 156 not found",
+        "timestamp": "2025-03-05T14:40:03.687067"
+    },
+    {
+        "data": {
+            "id": 53,
+            "name": "keluarga tersayang",
+            "type": "group",
+            "user_id": 994
+        },
+        "error": "Error creating groupchat 'keluarga tersayang': User with ID 994 not found",
+        "timestamp": "2025-03-05T14:40:03.687114"
+    },
+    {
+        "data": {
+            "id": 54,
+            "name": "Sabiy wkwk",
+            "type": "group",
+            "user_id": 1005
+        },
+        "error": "Error creating groupchat 'Sabiy wkwk': User with ID 1005 not found",
+        "timestamp": "2025-03-05T14:40:03.687157"
+    },
+    {
+        "data": {
+            "id": 55,
+            "name": "GRUP",
+            "type": "group",
+            "user_id": 1059
+        },
+        "error": "Error creating groupchat 'GRUP': User with ID 1059 not found",
+        "timestamp": "2025-03-05T14:40:03.687199"
+    },
+    {
+        "data": {
+            "id": 59,
+            "name": "Kajian Moba",
+            "type": "group",
+            "user_id": 1003
+        },
+        "error": "Error creating groupchat 'Kajian Moba': User with ID 1003 not found",
+        "timestamp": "2025-03-05T14:40:03.829955"
+    },
+    {
+        "data": {
+            "id": 60,
+            "name": "1K Corporate",
+            "type": "group",
+            "user_id": 1127
+        },
+        "error": "Error creating groupchat '1K Corporate': User with ID 1127 not found",
+        "timestamp": "2025-03-05T14:40:03.830011"
+    },
+    {
+        "data": {
+            "id": 61,
+            "name": "TBN",
+            "type": "group",
+            "user_id": 1249
+        },
+        "error": "Error creating groupchat 'TBN': User with ID 1249 not found",
+        "timestamp": "2025-03-05T14:40:03.984890"
+    },
+    {
+        "data": {
+            "id": 63,
+            "name": "Keluarga Cemara",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'Keluarga Cemara': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:04.286701"
+    },
+    {
+        "data": {
+            "id": 66,
+            "name": "RT01",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'RT01': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:04.581998"
+    },
+    {
+        "data": {
+            "id": 67,
+            "name": "GRUP KELUARGA",
+            "type": "group",
+            "user_id": 326
+        },
+        "error": "Error creating groupchat 'GRUP KELUARGA': User with ID 326 not found",
+        "timestamp": "2025-03-05T14:40:04.582054"
+    },
+    {
+        "data": {
+            "id": 68,
+            "name": "HUMAS RES TARAKAN",
+            "type": "group",
+            "user_id": 1308
+        },
+        "error": "Error creating groupchat 'HUMAS RES TARAKAN': User with ID 1308 not found",
+        "timestamp": "2025-03-05T14:40:04.582100"
+    },
+    {
+        "data": {
+            "id": 72,
+            "name": "Desaku",
+            "type": "group",
+            "user_id": 204
+        },
+        "error": "Error creating groupchat 'Desaku': User with ID 204 not found",
+        "timestamp": "2025-03-05T14:40:04.582143"
+    },
+    {
+        "data": {
+            "id": 73,
+            "name": "Lembaran Lama",
+            "type": "group",
+            "user_id": 576
+        },
+        "error": "Error creating groupchat 'Lembaran Lama': User with ID 576 not found",
+        "timestamp": "2025-03-05T14:40:04.582185"
+    },
+    {
+        "data": {
+            "id": 74,
+            "name": "Testing1",
+            "type": "group",
+            "user_id": 188
+        },
+        "error": "Error creating groupchat 'Testing1': User with ID 188 not found",
+        "timestamp": "2025-03-05T14:40:04.582226"
+    },
+    {
+        "data": {
+            "id": 75,
+            "name": "testing2",
+            "type": "channel",
+            "user_id": 188
+        },
+        "error": "Error creating groupchat 'testing2': User with ID 188 not found",
+        "timestamp": "2025-03-05T14:40:04.582267"
+    },
+    {
+        "data": {
+            "id": 84,
+            "name": "Perencanaan",
+            "type": "group",
+            "user_id": 960
+        },
+        "error": "Error creating groupchat 'Perencanaan': User with ID 960 not found",
+        "timestamp": "2025-03-05T14:40:04.582307"
+    },
+    {
+        "data": {
+            "id": 80,
+            "name": "desa",
+            "type": "group",
+            "user_id": 1334
+        },
+        "error": "Error creating groupchat 'desa': User with ID 1334 not found",
+        "timestamp": "2025-03-05T14:40:04.582348"
+    },
+    {
+        "data": {
+            "id": 78,
+            "name": "test3",
+            "type": "channel",
+            "user_id": 1335
+        },
+        "error": "Error creating groupchat 'test3': User with ID 1335 not found",
+        "timestamp": "2025-03-05T14:40:04.582388"
+    },
+    {
+        "data": {
+            "id": 85,
+            "name": "akpol",
+            "type": "group",
+            "user_id": 1645
+        },
+        "error": "Error creating groupchat 'akpol': User with ID 1645 not found",
+        "timestamp": "2025-03-05T14:40:04.582429"
+    },
+    {
+        "data": {
+            "id": 81,
+            "name": "tele",
+            "type": "channel",
+            "user_id": 1334
+        },
+        "error": "Error creating groupchat 'tele': User with ID 1334 not found",
+        "timestamp": "2025-03-05T14:40:04.582470"
+    },
+    {
+        "data": {
+            "id": 82,
+            "name": "pemuda",
+            "type": "group",
+            "user_id": 1312
+        },
+        "error": "Error creating groupchat 'pemuda': User with ID 1312 not found",
+        "timestamp": "2025-03-05T14:40:04.582511"
+    },
+    {
+        "data": {
+            "id": 83,
+            "name": "tersesat",
+            "type": "channel",
+            "user_id": 1312
+        },
+        "error": "Error creating groupchat 'tersesat': User with ID 1312 not found",
+        "timestamp": "2025-03-05T14:40:04.582551"
+    },
+    {
+        "data": {
+            "id": 86,
+            "name": "akpol II",
+            "type": "channel",
+            "user_id": 1645
+        },
+        "error": "Error creating groupchat 'akpol II': User with ID 1645 not found",
+        "timestamp": "2025-03-05T14:40:04.582591"
+    },
+    {
+        "data": {
+            "id": 87,
+            "name": "INTELKAM SANDI DAN WAKISTA LETTING 50",
+            "type": "group",
+            "user_id": 1333
+        },
+        "error": "Error creating groupchat 'INTELKAM SANDI DAN WAKISTA LETTING 50': User with ID 1333 not found",
+        "timestamp": "2025-03-05T14:40:04.582631"
+    },
+    {
+        "data": {
+            "id": 88,
+            "name": "u",
+            "type": "group",
+            "user_id": 3293
+        },
+        "error": "Error creating groupchat 'u': User with ID 3293 not found",
+        "timestamp": "2025-03-05T14:40:04.582673"
+    },
+    {
+        "data": {
+            "id": 90,
+            "name": "HUMAS SUMUT",
+            "type": "group",
+            "user_id": 1436
+        },
+        "error": "Error creating groupchat 'HUMAS SUMUT': User with ID 1436 not found",
+        "timestamp": "2025-03-05T14:40:04.582713"
+    },
+    {
+        "data": {
+            "id": 91,
+            "name": "MULTIMEDIA KALTARA",
+            "type": "group",
+            "user_id": 5714
+        },
+        "error": "Error creating groupchat 'MULTIMEDIA KALTARA': User with ID 5714 not found",
+        "timestamp": "2025-03-05T14:40:04.582753"
+    },
+    {
+        "data": {
+            "id": 92,
+            "name": "CommunityWato-wato",
+            "type": "group",
+            "user_id": 6507
+        },
+        "error": "Error creating groupchat 'CommunityWato-wato': User with ID 6507 not found",
+        "timestamp": "2025-03-05T14:40:04.582793"
+    },
+    {
+        "data": {
+            "id": 94,
+            "name": "HUMAS KLP",
+            "type": "group",
+            "user_id": 7226
+        },
+        "error": "Error creating groupchat 'HUMAS KLP': User with ID 7226 not found",
+        "timestamp": "2025-03-05T14:40:04.582835"
+    },
+    {
+        "data": {
+            "id": 93,
+            "name": "a",
+            "type": "channel",
+            "user_id": 6637
+        },
+        "error": "Error creating groupchat 'a': User with ID 6637 not found",
+        "timestamp": "2025-03-05T14:40:04.582875"
+    },
+    {
+        "data": {
+            "id": 95,
+            "name": "Akatsuki",
+            "type": "group",
+            "user_id": 188
+        },
+        "error": "Error creating groupchat 'Akatsuki': User with ID 188 not found",
+        "timestamp": "2025-03-05T14:40:04.582916"
+    }
+]

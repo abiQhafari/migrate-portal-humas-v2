@@ -1,0 +1,191 @@
+[
+    {
+        "beforeId": 2,
+        "name": "Media Hub",
+        "redirectUrl": "https://mediahub.polri.go.id/",
+        "imageUrl": "internal_apps/images/Media_Hub_vMzBTJz.png",
+        "isActive": true,
+        "description": null,
+        "afterId": 22
+    },
+    {
+        "beforeId": 3,
+        "name": "Tribrata News",
+        "redirectUrl": "https://tribratanews.polri.go.id/",
+        "imageUrl": "internal_apps/images/Tribata_News_Rev_aQDqINM.png",
+        "isActive": true,
+        "description": null,
+        "afterId": 23
+    },
+    {
+        "beforeId": 1,
+        "name": "Polri TV",
+        "redirectUrl": "https://tvradio.polri.go.id/",
+        "imageUrl": "internal_apps/images/Polri_TV_Rev_HUFCF3d.png",
+        "isActive": true,
+        "description": "",
+        "afterId": 24
+    },
+    {
+        "beforeId": 19,
+        "name": "test\u201c><script>alert(\u20191\u2019)</script>",
+        "redirectUrl": "http://google.com",
+        "imageUrl": "",
+        "isActive": true,
+        "description": "test\u201c><script>alert(\u20191\u2019)</script>",
+        "afterId": 25
+    },
+    {
+        "beforeId": 5,
+        "name": "INP Polri",
+        "redirectUrl": "https://inp.polri.go.id/",
+        "imageUrl": "internal_apps/images/Screenshot_20240328_124126_org.mozilla.firefox.png",
+        "isActive": true,
+        "description": "Indonesian National Police",
+        "afterId": 26
+    },
+    {
+        "beforeId": 6,
+        "name": "Citizen Journalism",
+        "redirectUrl": "#",
+        "imageUrl": "internal_apps/images/img_citizen_journalism.jpeg",
+        "isActive": true,
+        "description": "Ikut berkontribusi dengan menambahkan berita terupdate yang terjadi di sekitarmu.",
+        "afterId": 27
+    },
+    {
+        "beforeId": 7,
+        "name": "Website Divhumas Polri",
+        "redirectUrl": "https://humas.polri.go.id",
+        "imageUrl": "internal_apps/images/banner-humas.jpeg",
+        "isActive": true,
+        "description": "Kunjungi website resmi humas polri untuk mendapatkan informasi mengenai Divisi Humas Polri lebih dalam",
+        "afterId": 28
+    },
+    {
+        "beforeId": 20,
+        "name": "test\u201c><script>alert(\u20191\u2019)</script>",
+        "redirectUrl": "twtbjqn047oth9ivjm597ede95fw3wrl.oastify.com",
+        "imageUrl": "",
+        "isActive": true,
+        "description": "test\u201c><script>alert(\u20191\u2019)</script>",
+        "afterId": 29
+    },
+    {
+        "beforeId": 4,
+        "name": "ISO 9001:2015",
+        "redirectUrl": "https://is3.cloudhost.id/portalhumas/portal_humas_asset/media/internal_apps/images/IMG_2933.jpeg",
+        "imageUrl": "internal_apps/images/IMG_2933.jpeg",
+        "isActive": true,
+        "description": "Divisi Humas Polri Meraih ISO",
+        "afterId": 30
+    },
+    {
+        "beforeId": 8,
+        "name": "World Water Forum",
+        "redirectUrl": "https://worldwaterforum.org",
+        "imageUrl": "internal_apps/images/WWF-compress_875Qpai.jpg",
+        "isActive": true,
+        "description": "",
+        "afterId": 31
+    },
+    {
+        "beforeId": 16,
+        "name": "Lomba Artikel Jurnalistik HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/Artikel_1.png",
+        "isActive": false,
+        "description": "Tema: Sinergisitas Masyarakat dan TNI-POLRI dalam Mendukung Percepatan Transformasi Ekonomi yang Inklusif",
+        "afterId": 32
+    },
+    {
+        "beforeId": 11,
+        "name": "Lomba Cipta Lagu HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/CIPTA_LAGU_1.png",
+        "isActive": false,
+        "description": "Tema: SEMANGAT POLRI PRESISI MENUJU INDONESIA EMAS",
+        "afterId": 33
+    },
+    {
+        "beforeId": 12,
+        "name": "Lomba Fotografi HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/Lomba_Foto_1.png",
+        "isActive": false,
+        "description": "Tema: Sinergisitas Masyarakat dan TNI-POLRI dalam Mendukung Percepatan Transformasi Ekonomi yang Inklusif",
+        "afterId": 34
+    },
+    {
+        "beforeId": 17,
+        "name": "Lomba Cerpen HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/materi_CERPEN.png",
+        "isActive": false,
+        "description": "Tema: Polisi yang Baik Hati",
+        "afterId": 35
+    },
+    {
+        "beforeId": 18,
+        "name": "Lomba Karikatur HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/KARIKATUR_1_UDPATE.jpeg",
+        "isActive": false,
+        "description": "Tema: Komitmen Polri Tidak Anti Kritik Dalam Memelihara Kamtibmas",
+        "afterId": 36
+    },
+    {
+        "beforeId": 21,
+        "name": "Dirgahayu Republik Indonesia Ke 79",
+        "redirectUrl": "#",
+        "imageUrl": "internal_apps/images/HUT_RI_79.jpg",
+        "isActive": true,
+        "description": "Mari kita merayakan semangat kemerdekaan dengan tekad dan dedikasi untuk terus menjaga keamanan, ketertiban, dan kedamaian di seluruh pelosok negeri. POLRI hadir sebagai garda terdepan dalam melindungi dan melayani masyarakat, bersama-sama mewujudkan Indonesia yang lebih kuat, lebih maju, dan lebih sejahtera.",
+        "afterId": 37
+    },
+    {
+        "beforeId": 9,
+        "name": "Lomba Tiktok HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/TIKTOK_1_4842wwX.png",
+        "isActive": false,
+        "description": "Tema: Bahu Membahu Membangun POLRI PRESISI",
+        "afterId": 38
+    },
+    {
+        "beforeId": 10,
+        "name": "Lomba Mendongeng HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/Mendongeng_1.png",
+        "isActive": false,
+        "description": "Tema: POLISI SAHABATKU",
+        "afterId": 39
+    },
+    {
+        "beforeId": 13,
+        "name": "Lomba Film Pendek HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/FILEM_PENDEK_1.png",
+        "isActive": false,
+        "description": "Tema: POLRI Bersama Masyarakat Membangun Lingkungan yang Tertib, Aman, dan Kondusif.",
+        "afterId": 40
+    },
+    {
+        "beforeId": 14,
+        "name": "Lomba Infografis HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/infografis_1.png",
+        "isActive": false,
+        "description": "Tema: Masyarakat Bersingergi bersama TNI-POLRI Membangun Lingkungan yang Berbudaya",
+        "afterId": 41
+    },
+    {
+        "beforeId": 15,
+        "name": "Lomba Video Edukasi HUT Bhayangkara Ke-78",
+        "redirectUrl": "https://tribratanews.polri.go.id",
+        "imageUrl": "internal_apps/images/video_edukasi.png",
+        "isActive": false,
+        "description": "Tema: SEMANGAT PERUBAHAN MENUJU INDONESIA EMAS",
+        "afterId": 42
+    }
+]

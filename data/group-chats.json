@@ -1,0 +1,114 @@
+[
+    {
+        "beforeId": 26,
+        "name": "urkeu humas",
+        "type": "GROUP",
+        "user_id": 288,
+        "afterId": 81
+    },
+    {
+        "beforeId": 35,
+        "name": "PKK RT 5",
+        "type": "GROUP",
+        "user_id": 286,
+        "afterId": 82
+    },
+    {
+        "beforeId": 36,
+        "name": "urkeu humas",
+        "type": "GROUP",
+        "user_id": 294,
+        "afterId": 83
+    },
+    {
+        "beforeId": 39,
+        "name": "GRUP ARISAN",
+        "type": "GROUP",
+        "user_id": 290,
+        "afterId": 84
+    },
+    {
+        "beforeId": 42,
+        "name": "Group CH",
+        "type": "GROUP",
+        "user_id": 1028,
+        "afterId": 85
+    },
+    {
+        "beforeId": 43,
+        "name": "ADL",
+        "type": "GROUP",
+        "user_id": 1051,
+        "afterId": 86
+    },
+    {
+        "beforeId": 46,
+        "name": "Karangtaruna",
+        "type": "GROUP",
+        "user_id": 1001,
+        "afterId": 87
+    },
+    {
+        "beforeId": 47,
+        "name": "Keluarga",
+        "type": "GROUP",
+        "user_id": 1016,
+        "afterId": 88
+    },
+    {
+        "beforeId": 44,
+        "name": "Jadiin lari",
+        "type": "GROUP",
+        "user_id": 948,
+        "afterId": 89
+    },
+    {
+        "beforeId": 50,
+        "name": "Tiba tiba run",
+        "type": "GROUP",
+        "user_id": 996,
+        "afterId": 90
+    },
+    {
+        "beforeId": 56,
+        "name": "Posting Baik",
+        "type": "GROUP",
+        "user_id": 333,
+        "afterId": 91
+    },
+    {
+        "beforeId": 57,
+        "name": "Obor",
+        "type": "GROUP",
+        "user_id": 1014,
+        "afterId": 92
+    },
+    {
+        "beforeId": 58,
+        "name": "Bumiku",
+        "type": "GROUP",
+        "user_id": 340,
+        "afterId": 93
+    },
+    {
+        "beforeId": 62,
+        "name": "Pancasila45",
+        "type": "GROUP",
+        "user_id": 1040,
+        "afterId": 94
+    },
+    {
+        "beforeId": 64,
+        "name": "pid",
+        "type": "GROUP",
+        "user_id": 1097,
+        "afterId": 95
+    },
+    {
+        "beforeId": 65,
+        "name": "PID",
+        "type": "GROUP",
+        "user_id": 346,
+        "afterId": 96
+    }
+]

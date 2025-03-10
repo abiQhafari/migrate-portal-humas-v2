@@ -1,0 +1,210 @@
+[
+    {
+        "data": {
+            "id": 197,
+            "status": "approved",
+            "note": null,
+            "approved_date": "2023-11-13T14:33:27.579723+07:00",
+            "approved_by_id": 50,
+            "assignment_id": 52,
+            "user_id": 52,
+            "work_date": "2023-11-13T14:24:26.655728+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/Screenshot_20231113_100658_Chrome.jpg",
+                    "share_channel_id": 15
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: User with ID 52 not found",
+        "timestamp": "2025-03-08T08:22:29.932157"
+    },
+    {
+        "data": {
+            "id": 750,
+            "status": "pending",
+            "note": null,
+            "approved_date": null,
+            "approved_by_id": null,
+            "assignment_id": 83,
+            "user_id": 1014,
+            "work_date": "2024-02-29T10:27:29.646257+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/WhatsApp_Image_2024-02-28_at_15.48.52.jpeg",
+                    "share_channel_id": 57
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:30.565Z\"}",
+        "timestamp": "2025-03-08T08:22:30.568206"
+    },
+    {
+        "data": {
+            "id": 691,
+            "status": "approved",
+            "note": null,
+            "approved_date": "2024-02-29T10:50:29.350621+07:00",
+            "approved_by_id": 2,
+            "assignment_id": 83,
+            "user_id": 324,
+            "work_date": "2024-02-29T10:29:14.395061+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG_2721.jpeg",
+                    "share_channel_id": 48
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:30.781Z\"}",
+        "timestamp": "2025-03-08T08:22:30.783133"
+    },
+    {
+        "data": {
+            "id": 879,
+            "status": "pending",
+            "note": null,
+            "approved_date": null,
+            "approved_by_id": null,
+            "assignment_id": 83,
+            "user_id": 204,
+            "work_date": "2024-02-29T10:29:44.205280+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG-20240229-WA0005.jpg",
+                    "share_channel_id": 20
+                },
+                {
+                    "evidence": "assignment/evidence/IMG-20240229-WA0004.jpg",
+                    "share_channel_id": 24
+                },
+                {
+                    "evidence": "assignment/evidence/IMG-20240229-WA0005_MWtOxMz.jpg",
+                    "share_channel_id": 25
+                },
+                {
+                    "evidence": "assignment/evidence/IMG-20240229-WA0004_12t6oAS.jpg",
+                    "share_channel_id": 40
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:30.963Z\"}",
+        "timestamp": "2025-03-08T08:22:30.964567"
+    },
+    {
+        "data": {
+            "id": 704,
+            "status": "pending",
+            "note": null,
+            "approved_date": null,
+            "approved_by_id": null,
+            "assignment_id": 83,
+            "user_id": 1001,
+            "work_date": "2024-02-29T10:29:43.766786+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG-20240225-WA0011.jpg",
+                    "share_channel_id": 46
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:31.122Z\"}",
+        "timestamp": "2025-03-08T08:22:31.123763"
+    },
+    {
+        "data": {
+            "id": 694,
+            "status": "pending",
+            "note": null,
+            "approved_date": null,
+            "approved_by_id": null,
+            "assignment_id": 83,
+            "user_id": 326,
+            "work_date": "2024-03-04T09:39:14.407846+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/Screenshot_2024-03-04_093904.png",
+                    "share_channel_id": 67
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:31.334Z\"}",
+        "timestamp": "2025-03-08T08:22:31.336526"
+    },
+    {
+        "data": {
+            "id": 847,
+            "status": "pending",
+            "note": null,
+            "approved_date": null,
+            "approved_by_id": null,
+            "assignment_id": 83,
+            "user_id": 188,
+            "work_date": "2024-03-04T23:05:50.500564+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG_0496-1709568333169.png",
+                    "share_channel_id": 21
+                },
+                {
+                    "evidence": "assignment/evidence/IMG_0494-1709568335679.png",
+                    "share_channel_id": 22
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:31.515Z\"}",
+        "timestamp": "2025-03-08T08:22:31.516277"
+    },
+    {
+        "data": {
+            "id": 1208,
+            "status": "approved",
+            "note": null,
+            "approved_date": "2024-04-25T02:37:13.405496+07:00",
+            "approved_by_id": 1350,
+            "assignment_id": 119,
+            "user_id": 1645,
+            "work_date": "2024-04-25T02:34:20.111957+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG_0622-1713987243935.jpeg",
+                    "share_channel_id": 85
+                },
+                {
+                    "evidence": "assignment/evidence/IMG_0621-1713987245787.jpeg",
+                    "share_channel_id": 86
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: User with ID 1645 not found",
+        "timestamp": "2025-03-08T08:22:37.466195"
+    },
+    {
+        "data": {
+            "id": 1783,
+            "status": "rejected",
+            "note": null,
+            "approved_date": "2024-12-04T11:56:45.425267+07:00",
+            "approved_by_id": 189,
+            "assignment_id": 132,
+            "user_id": 188,
+            "work_date": "2024-12-03T11:32:46.560619+07:00",
+            "evidence": [
+                {
+                    "evidence": "assignment/evidence/IMG_2762-1733200341305.jpeg",
+                    "share_channel_id": 74
+                },
+                {
+                    "evidence": "assignment/evidence/IMG_3020-1733200344324.jpeg",
+                    "share_channel_id": 75
+                },
+                {
+                    "evidence": "assignment/evidence/IMG_2611-1733200364699.jpeg",
+                    "share_channel_id": 95
+                }
+            ]
+        },
+        "error": "Failed to create assignment submit. Error: API Error: {\"type\":\"serverError\",\"errors\":[{\"code\":\"internalServerError\",\"detail\":\"Server error occurred.\",\"attr\":\"\"}],\"path\":\"POST /api/v1/assignment-submits\",\"timestamp\":\"2025-03-08T01:22:40.685Z\"}",
+        "timestamp": "2025-03-08T08:22:40.686194"
+    }
+]

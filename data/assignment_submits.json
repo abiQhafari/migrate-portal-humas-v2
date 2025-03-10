@@ -1,0 +1,266 @@
+[
+    {
+        "beforeId": 888,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_0456-1709572463761.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/IMG_0468-1709572484856.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 89
+    },
+    {
+        "beforeId": 910,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/tg_image_3999147176.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/tg_image_3999147176_ZklIaF4.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 90
+    },
+    {
+        "beforeId": 923,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_0433-1710101455498.png",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 91
+    },
+    {
+        "beforeId": 1022,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_0536-1710528491170.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 92
+    },
+    {
+        "beforeId": 1087,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/6724c9d16d0bd7cc60ada1b02b9560919b58d80a6c8097f82157315a8a00946f.0.JPG",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/434a68a2d109ab35d2d44e98d3c6917232dc114010ae27ef0d3719bba745217d.0_3Y0FrMU.JPG",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 93
+    },
+    {
+        "beforeId": 1082,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_0456-1710842527980.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/IMG_0535-1710842530573.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 94
+    },
+    {
+        "beforeId": 1094,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/b4ca127b29fd4b9ecab7a96dccf787618c7324632d21478d70018ac8e049acb7.0_f0MvGed.JPG",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/b4ca127b29fd4b9ecab7a96dccf787618c7324632d21478d70018ac8e049acb7.0_KZFUqhU.JPG",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 95
+    },
+    {
+        "beforeId": 1089,
+        "status": "APPROVED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/aduh_siang_tadi_dolar_as_kembali_pukul_rupiah_lZObBOn.webp",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/aduh_siang_tadi_dolar_as_kembali_pukul_rupiah_4MOEAWk.webp",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 96
+    },
+    {
+        "beforeId": 1211,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_0622-1713986948788.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/IMG_0621-1713986958180.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 97
+    },
+    {
+        "beforeId": 1451,
+        "status": "PENDING",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/pablo-escobar.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/FCY9PcBrhN3pfoNV7FfFTQ.jpg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 98
+    },
+    {
+        "beforeId": 1755,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/2a4a2c5b-352f-4aca-a5d7-bf4f394057c1-1731558042623.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/9bd7ee03-8068-402d-ba71-cb0ea1da7ae4-1731558053098.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 99
+    },
+    {
+        "beforeId": 1212,
+        "status": "PENDING",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/Patrol_Night_Policing_Oct_15_2018.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Men_in_Uniform_Unsplash.jpg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 100
+    },
+    {
+        "beforeId": 1326,
+        "status": "PENDING",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/Facebook_Image.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Men_in_Uniform_Unsplash_Q2B0ZZ3.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Serializers.py_1.png",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 101
+    },
+    {
+        "beforeId": 1430,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/Helm_Gratis_Operasi_Keselamatan_2023.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Facebook_Image_h6ZOcTW.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Man_Driving_Car.jpg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 102
+    },
+    {
+        "beforeId": 1805,
+        "status": "PENDING",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/IMG_3034-1733292855726.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/IMG_3033-1733292857509.jpeg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/IMG_2842-1733292871678.jpeg",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 104
+    },
+    {
+        "beforeId": 1822,
+        "status": "REJECTED",
+        "note": null,
+        "evidence": [
+            {
+                "attachment": "assignment/evidence/FCY9PcBrhN3pfoNV7FfFTQ_2l0GiFE.jpg",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/Screenshot_20240328_124126_org.webp",
+                "groupChat_id": null
+            },
+            {
+                "attachment": "assignment/evidence/images.png",
+                "groupChat_id": null
+            }
+        ],
+        "afterId": 105
+    }
+]
