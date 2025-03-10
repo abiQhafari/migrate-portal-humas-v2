@@ -6,13 +6,13 @@ import requests
 from datetime import datetime
 
 class BaseMigration:
-    def __init__(self, token, host="http://localhost:3000"):
+    def __init__(self, token, host="https://api-ph-stg.0x1.space"):
         self.token = token
         self.host = host
         self.headers = {"Authorization": "Bearer " + token}
         self.base_url = "https://is3.cloudhost.id/portalhumas/portal_humas_asset/media/"
         self.logger = self._setup_logger()
-        self.connection = psycopg2.connect('dbname=portal-humas-backup user=abialqhafari')
+        self.connection = psycopg2.connect('dbname=portal-humas-backup user=postgres password=03J1:Oxs|9M host=192.168.1.150 port=5432')
         self.migration_errors = []
         
     def _setup_logger(self):
