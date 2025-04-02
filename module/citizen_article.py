@@ -1,6 +1,9 @@
 from base.base import BaseMigration
 import requests
 from datetime import datetime
+from services.keycloak_service import KeycloakService
+
+import time
 
 class CitizenArticleMigration(BaseMigration):
     def __init__(self, token, user_migration, region_migration):
@@ -27,20 +30,13 @@ class CitizenArticleMigration(BaseMigration):
                 if item is not None
             }
             
-            print(title)
-            
-            print(author_id)
-            print(approved_by_id)
-            
             index_user = index_map_user.get(author_id, None)
             
             if author_id and index_user is None:
                 raise ValueError(f"User with ID {author_id} not found")
             
             index_approved_by = index_map_user.get(approved_by_id, None)
-            
-            print(index_user)
-            print(index_approved_by)
+
             
             formatted_created_at = created_at.strftime("%Y-%m-%dT%H:%M:%S.%f") if created_at else None
             formatted_updated_at = updated_at.strftime("%Y-%m-%dT%H:%M:%S.%f") if updated_at else None
@@ -80,68 +76,70 @@ class CitizenArticleMigration(BaseMigration):
                 ]
             }
             
-            response = requests.post(
-                self.host + "/api/v1/articles",
-                json=payload,
-                headers=self.headers,
+            result = KeycloakService().execute_with_retry(
+                lambda token: requests.post(
+                    self.host + "/api/v1/articles",
+                    json=payload,
+                    headers={"Authorization": f"Bearer {token}"},
+                )
             )
-            
-            if response.status_code != 201:
-                raise ValueError(f"API Error: {response.text}")
-
-            return {
-                "beforeId": beforeId,
-                "authorKeycloak" : author_keycloak,
-                "approvedBy" : approved_by_keycloak,
-                "title": title or "",
-                "slug": slug or "",
-                "createdAt": formatted_created_at,
-                "updatedAt": formatted_updated_at,
-                "image": self.base_url+image if image else source_image,
-                "video": self.base_url+video if video else source_video,
-                "audio": self.base_url+audio if audio else source_audio,
-                "publicationDate": formatted_publication_date,
-                "description": description or "",
-                "caption": caption or "",
-                "status": "PUBLISHED",
-                "initialView": init_viewer,
-                "initialLike": init_like,
-                "initialShare": init_share,
-                "isPublic": is_public or False,
-                "region_id": self.region_migration.list_regions[index_region]["afterId"],
-                "categories": [
-                    kategori if kategori else "Terbaru"
-                ],
-                "afterId": response.json()["data"]["id"],
-            }           
+            if result and result.status_code == 201:
+                return {
+                    "beforeId": beforeId,
+                    "authorKeycloak" : author_keycloak,
+                    "approvedBy" : approved_by_keycloak,
+                    "title": title or "",
+                    "slug": slug or "",
+                    "createdAt": formatted_created_at,
+                    "updatedAt": formatted_updated_at,
+                    "image": self.base_url+image if image else source_image,
+                    "video": self.base_url+video if video else source_video,
+                    "audio": self.base_url+audio if audio else source_audio,
+                    "publicationDate": formatted_publication_date,
+                    "description": description or "",
+                    "caption": caption or "",
+                    "status": "PUBLISHED",
+                    "initialView": init_viewer,
+                    "initialLike": init_like,
+                    "initialShare": init_share,
+                    "isPublic": is_public or False,
+                    "region_id": self.region_migration.list_regions[index_region]["afterId"],
+                    "categories": [
+                        kategori if kategori else "Terbaru"
+                    ],
+                    "afterId": result.json()["data"]["id"],
+                }
+            else:
+                raise ValueError(f"API Error: {result.json()}")
         except Exception as e:
             raise Exception(f"Error creating article '{title}': {str(e)}")
 
     def migrate(self):
         file_name = "data/citizen_articles.json"
-        self.list_citizen_articles = self.load_json(file_name)
+        self.list_citizen_articles = self.load_json(file_name) or []
+        existing_before_ids = {article["beforeId"] for article in self.list_citizen_articles}
         
-        if not self.list_citizen_articles:
-            list_migration_citizen_articles = []
-            
-            query = """
-                SELECT contents_articles.id, contents_articles.created_at, contents_articles.updated_at, title, image, video, source, contents_articles.is_public, publication_date, author_id, approved_by_id, caption, audio, source_audio, source_image, source_video, description, source_url,region_id, contents_articles.slug, status, rejected_note, image_metadata, video_metadata, init_viewer, init_like, init_share, c.name as kategory FROM contents_articles LEFT JOIN contents_articles_categories cac ON cac.articles_id = contents_articles.id LEFT JOIN contents_articlecategory c ON c.id = cac.articlecategory_id WHERE author_id IS NOT NULL AND contents_articles.is_deleted = false
-            """
-            
-            results = self.query_data(query, 1000)
-            for row in results:
+        list_migration_citizen_articles = []
+        query = """
+            SELECT contents_articles.id, contents_articles.created_at, contents_articles.updated_at, title, image, video, source, contents_articles.is_public, publication_date, author_id, approved_by_id, caption, audio, source_audio, source_image, source_video, description, source_url, region_id, contents_articles.slug, status, rejected_note, image_metadata, video_metadata, init_viewer, init_like, init_share, c.name as kategory 
+            FROM contents_articles 
+            LEFT JOIN contents_articles_categories cac ON cac.articles_id = contents_articles.id 
+            LEFT JOIN contents_articlecategory c ON c.id = cac.articlecategory_id 
+            WHERE author_id IS NOT NULL AND contents_articles.is_deleted = false
+        """
+        
+        results = self.query_data(query, 1000)
+        for row in results:
+            if row[0] not in existing_before_ids:
                 try:
                     new_article = self.make_citizen_article(*row)
                     self.logger.info(f"Migrated article: {new_article['title']}")
                     list_migration_citizen_articles.append(new_article)
                 except Exception as err:
-                    self.log_migration_error({
-                        "id": row[0],
-                        "title": row[3],
-                    }, err)
-            
-            if list_migration_citizen_articles:
-                self.save_json(file_name, list_migration_citizen_articles)
-                self.list_articles = list_migration_citizen_articles
-            
-            self.save_error_log("citizenarticles")
+                    self.log_migration_error({"id": row[0], "title": row[3]}, err)
+        
+        if list_migration_citizen_articles:
+            self.list_citizen_articles.extend(list_migration_citizen_articles)
+            self.save_json(file_name, self.list_citizen_articles)
+        
+        self.save_error_log("citizenarticles")

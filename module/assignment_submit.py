@@ -1,8 +1,10 @@
 from base.base import BaseMigration
 from collections import defaultdict
 from typing import List, Dict, Any
+from services.keycloak_service import KeycloakService
 
 import requests
+import time
 
 class AssignmentSubmitMigration(BaseMigration):
     def __init__(self, token, user_migration, assignment_migration, group_chat_migration):
@@ -112,106 +114,67 @@ class AssignmentSubmitMigration(BaseMigration):
                 "evidence": processed_evidence
             }
             
-            response = requests.post(
-                self.host + "/api/v1/assignment-submits",
-                json=payload,
-                headers=self.headers
+            result = KeycloakService().execute_with_retry(
+                lambda token: requests.post(
+                    self.host + "/api/v1/assignment-submits",
+                    json=payload,
+                    headers={"Authorization": f"Bearer {token}"}
+                )
             )
+            if result and result.status_code == 201:
+                return {
+                    "beforeId": beforeId,
+                    "status": parsed_status,
+                    "note": note,
+                    "evidence": processed_evidence,
+                    "afterId": result.json()["data"]["id"],
+                }
             
-            if response.status_code != 201:
-                raise ValueError(f"API Error: {response.text}")
-
-            return {
-                "beforeId": beforeId,
-                "status": parsed_status,
-                "note": note,
-                "evidence": processed_evidence,
-                "afterId": response.json()["data"]["id"],
-            }
+            else: 
+                raise ValueError(f"API Error: {result.text}")
             
         except Exception as e:
             raise Exception(f"Failed to create assignment submit. Error: {str(e)}")
             
     def migrate(self):
         file_name = "data/assignment_submits.json"
-        self.list_assignment_submits = self.load_json(file_name)
+        self.list_assignment_submits = self.load_json(file_name) or []
+        existing_ids = {item["beforeId"] for item in self.list_assignment_submits}
         
-        if not self.list_assignment_submits:
-            list_migration_assignment_submits = []
-            
-            query = """
-                SELECT
-                    au.id AS id,
-                    au.status AS status,
-                    au.note AS note,
-                    au.approved_date AS approved_date,
-                    au.approved_by_id AS approved_by_id,
-                    au.assignment_id AS assignment_id,
-                    au.user_id AS user_id,
-                    au.work_date AS work_date,
-                    ae.evidence AS evidence,
-                    ae.share_channel_id AS share_channel_id
-                FROM assignments_assignmentuser AS au
-                LEFT JOIN assignments_assignmentevidence AS ae
-                ON au.id = ae.assignment_user_id
-                WHERE au.status != 'assigned' AND ae.share_channel_id IS NOT NULL
-                AND au.is_deleted = false
-            """
-            
-            results = self.query_data(query, 1000)
-            
-            # Convert results to list of dictionaries
-            result_dicts = [
-                {
-                    "id": row[0],
-                    "status": row[1],
-                    "note": row[2],
-                    "approved_date": row[3],
-                    "approved_by_id": row[4],
-                    "assignment_id": row[5],
-                    "user_id": row[6],
-                    "work_date": row[7],
-                    "evidence": row[8],
-                    "share_channel_id": row[9]
-                }
-                for row in results
-            ]
-            
-            grouped_results = self.group_evidence_by_user(result_dicts)
-            
-            for group in grouped_results:
+        query = """
+            SELECT
+                au.id, au.status, au.note, au.approved_date, au.approved_by_id,
+                au.assignment_id, au.user_id, au.work_date, ae.evidence, ae.share_channel_id
+            FROM assignments_assignmentuser AS au
+            LEFT JOIN assignments_assignmentevidence AS ae ON au.id = ae.assignment_user_id
+            WHERE au.status != 'assigned' AND ae.share_channel_id IS NOT NULL AND au.is_deleted = false
+        """
+        results = self.query_data(query, 1000)
+        result_dicts = [{
+            "id": row[0], "status": row[1], "note": row[2], "approved_date": row[3],
+            "approved_by_id": row[4], "assignment_id": row[5], "user_id": row[6],
+            "work_date": row[7], "evidence": row[8], "share_channel_id": row[9]
+        } for row in results]
+        
+        grouped_results = self.group_evidence_by_user(result_dicts)
+        new_migrations = []
+
+        for group in grouped_results:
+            if group["id"] not in existing_ids:
                 try:
                     
                     new_assignment_submit = self.make_assignment_submit(
-                        group["id"],
-                        group["status"],
-                        group["note"],
-                        group.get("approved_date"),
-                        group.get("approved_by_id"),
-                        group.get("assignment_id"),
-                        group.get("user_id"),
-                        group.get("work_date"),
-                        group["evidence"],
+                        group["id"], group["status"], group["note"], group["approved_date"],
+                        group["approved_by_id"], group["assignment_id"], group["user_id"],
+                        group["work_date"], group["evidence"]
                     )
                     self.logger.info(f"Migrated assignment submit: {new_assignment_submit['beforeId']}")
-                    list_migration_assignment_submits.append(new_assignment_submit)
+                    new_migrations.append(new_assignment_submit)
                 except Exception as err:
-                    print("Error: ", err)
-                    self.log_migration_error({
-                        "id": group["id"],
-                        "status": group["status"],
-                        "note": group["note"],
-                        "approved_date": group.get("approved_date"),
-                        "approved_by_id": group.get("approved_by_id"),
-                        "assignment_id": group.get("assignment_id"),
-                        "user_id": group.get("user_id"),
-                        "work_date": group.get("work_date"),
-                        "evidence": group["evidence"]
-                    }, err)
+                    self.log_migration_error(group, err)
                     
-            if list_migration_assignment_submits:
-                self.save_json(file_name, list_migration_assignment_submits)
-                self.list_assignment_submits = list_migration_assignment_submits
-                
-            self.save_error_log("assignment_submit")
-
+        if new_migrations:
+            self.save_json(file_name, self.list_assignment_submits + new_migrations)
+            self.list_assignment_submits += new_migrations
+            
+        self.save_error_log("assignment_submit")

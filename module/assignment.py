@@ -2,6 +2,9 @@ from base.base import BaseMigration
 
 import requests
 
+import time
+from services.keycloak_service import KeycloakService
+
 class AssignmentMigration(BaseMigration):
     def __init__(self, token, region_migration, user_migration):
         super().__init__(token)
@@ -44,40 +47,51 @@ class AssignmentMigration(BaseMigration):
                 ],
             }
             
-            response = requests.post(
-                self.host + "/api/v1/assignments",
-                json=payload,
-                headers=self.headers,
+            result = KeycloakService().execute_with_retry(
+                lambda token: requests.post(
+                    self.host + "/api/v1/assignments",
+                    json=payload,
+                    headers={"Authorization": f"Bearer {token}"},
+                )
             )
-            
-            return {
-                "beforeId": beforeId,
-                "title": title,
-                "description": description,
-                "url": assignment_url,
-                "assignmentCode": assignment_number,
-                "attachment": attachment,
-                "createdBy": created_by_id,
-                "region_id": region_ids,
-                "afterId": response.json()["data"]["id"],
-            }
+            if result.status_code == 201:
+                return {
+                    "beforeId": beforeId,
+                    "title": title,
+                    "description": description,
+                    "url": assignment_url,
+                    "assignmentCode": assignment_number,
+                    "attachment": attachment,
+                    "createdBy": created_by_id,
+                    "region_id": region_ids,
+                    "afterId": result.json()["data"]["id"],
+                }
+            else:
+                raise ValueError(f"API Error: {result.text}")
+                    
         except Exception as e:
             raise Exception(f"Failed to create assignment: {title}. Error: {str(e)}")
     
     def migrate(self):
         file_name = "data/assignments.json"
-        self.list_assignments = self.load_json(file_name)
+        self.list_assignments = self.load_json(file_name) or []
+
+        # Buat set untuk menyimpan ID yang sudah ada di JSON
+        existing_assignment_ids = {item["beforeId"] for item in self.list_assignments}
         
-        if not self.list_assignments:
-            list_migration_assignments = []
-            
-            query = """
-                SELECT id, title, description, assignment_url, assignment_number, created_by_id, attachment, region_ids from assignments_assignment where assignments_assignment.is_deleted = false
-            """
-            
-            results = self.query_data(query, 1000)
-            for row in results:
+        query = """
+            SELECT id, title, description, assignment_url, assignment_number, created_by_id, attachment, region_ids
+            FROM assignments_assignment 
+            WHERE assignments_assignment.is_deleted = false
+        """
+        
+        results = self.query_data(query, 1000)
+        list_migration_assignments = self.list_assignments.copy()
+        
+        for row in results:
+            if row[0] not in existing_assignment_ids:  # Hanya migrasi jika belum ada
                 try:
+                    
                     new_assignment = self.make_assignment(*row)
                     self.logger.info(f"Migrated assignment: {new_assignment['title']}")
                     list_migration_assignments.append(new_assignment)
@@ -93,9 +107,8 @@ class AssignmentMigration(BaseMigration):
                         "region_ids": row[7]
                     }, err)
                     
-            if list_migration_assignments:
-                self.save_json(file_name, list_migration_assignments)
-                self.list_assignments = list_migration_assignments
-                
-            self.save_error_log("assignment")
-        
+        if list_migration_assignments != self.list_assignments:
+            self.save_json(file_name, list_migration_assignments)
+            self.list_assignments = list_migration_assignments
+            
+        self.save_error_log("assignment")

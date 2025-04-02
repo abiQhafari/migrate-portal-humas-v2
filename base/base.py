@@ -6,7 +6,7 @@ import requests
 from datetime import datetime
 
 class BaseMigration:
-    def __init__(self, token, host="https://api-ph-stg.0x1.space"):
+    def __init__(self, token, host="http://192.168.1.150:3016"):
         self.token = token
         self.host = host
         self.headers = {"Authorization": "Bearer " + token}
@@ -51,13 +51,7 @@ class BaseMigration:
 
         try:
             while True:
-                 # If limit is None, use pagination with 1000 records per fetch
-                if limit is None:
-                    paginated_query = f"{query} LIMIT 1000 OFFSET {offset}"
-                    offset += 1000
-                else:
-                    # If limit is specified, fetch only that amount without pagination
-                    paginated_query = f"{query} LIMIT {limit}"
+                paginated_query = f"{query} LIMIT {limit} OFFSET {offset}" if limit else query
 
                 self.logger.info(f"Executing query: {paginated_query}")
                 cursor.execute(paginated_query)
@@ -71,7 +65,12 @@ class BaseMigration:
                 # If limit is specified, break after first fetch
                 if limit is not None:
                     break
-
+                
+                offset += limit
+        
+        except Exception as e:
+            self.logger.error(f"Query error: {str(e)}")
+            raise e
         finally:
             cursor.close()
 
