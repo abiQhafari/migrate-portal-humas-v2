@@ -21,9 +21,21 @@ class RegionMigration(BaseMigration):
             if index is not None:
                 parent_region_id = self.list_regions[index]["afterId"]
                 
+            payload = {
+                "name": territory,
+                "icon": icon,
+                "address": address,
+                "sortIndex": sequence if sequence > -1 else -1,
+                "description": description,
+                "slug": slug,
+                "level": category.split(" ")[0].upper(),
+                "parentId": parent_region_id,
+            }
+                
             result = KeycloakService().execute_with_retry(
                 lambda token: requests.post(
                     self.host + "/api/v1/regions",
+                    json=payload,
                     headers={"Authorization": f"Bearer {token}"},
                 )
             )
