@@ -24,9 +24,9 @@ class RegionMigration(BaseMigration):
             payload = {
                 "name": territory,
                 "icon": icon,
-                "address": address,
+                "address": address if address else "-",
                 "sortIndex": sequence if sequence > -1 else -1,
-                "description": description,
+                "description": description if description else "-",
                 "slug": slug,
                 "level": category.split(" ")[0].upper(),
                 "parentId": parent_region_id,
