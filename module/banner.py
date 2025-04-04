@@ -51,7 +51,7 @@ class BannerMigration(BaseMigration):
         if not self.list_banners:
             list_migration_banners = []
             query = """
-                SELECT id, name, url, image, is_show, description FROM internal_apps_internalapps
+                SELECT id, name, url, image, is_show, description FROM internal_apps_internalapps WHERE is_deleted = false
             """
             results = self.query_data(query, 1000)
             
