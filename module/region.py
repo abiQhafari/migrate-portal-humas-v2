@@ -23,7 +23,7 @@ class RegionMigration(BaseMigration):
                 
             payload = {
                 "name": territory,
-                "icon": icon,
+                "icon": icon if icon else "-",
                 "address": address if address else "-",
                 "sortIndex": sequence if sequence > -1 else -1,
                 "description": description if description else "-",
