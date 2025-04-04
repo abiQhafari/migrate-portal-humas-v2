@@ -76,6 +76,21 @@ class BaseMigration:
 
         return list_rows
     
+    def delete_data(self, query):
+        cursor = self.connection.cursor()
+        try:
+            self.logger.info(f"Executing delete query: {query}")
+            cursor.execute(query)
+            self.connection.commit()
+        except Exception as e:
+            self.logger.error(f"Delete error: {str(e)}")
+            raise e
+        finally:
+            cursor.close()
+            self.connection.commit()
+            self.connection.close()
+            self.logger.info("Connection closed.")
+    
     def save_error_log(self, module_name):
         if self.migration_errors:
             error_file = f"data/error_{module_name}.json"
