@@ -105,3 +105,43 @@ class RegionMigration(BaseMigration):
             
         self.save_error_log("region")
         
+    def delete_region(self):
+        try:
+            # Get all regions
+            existing_region = KeycloakService.execute_with_retry(
+                lambda token: requests.get(
+                    self.host + "/api/v1/regions?limit=1000&orderBy=id&orderDirection=DESC",
+                    headers={"Authorization": f"Bearer {token}"},
+                )
+            )
+            
+            if existing_region.status_code != 200:
+                raise ValueError(f"Failed to fetch regions: {existing_region.text}")
+                
+            regions = existing_region.json()["data"]
+            
+            # Delete regions in reverse order (children first)
+            for region in regions:
+                try:
+                    result = KeycloakService.execute_with_retry(
+                        lambda token: requests.delete(
+                            self.host + f"/api/v1/regions/{region['slug']}",
+                            headers={"Authorization": f"Bearer {token}"},
+                        )
+                    )
+                    
+                    if result.status_code != 204:
+                        self.logger.error(f"Failed to delete region {region['slug']}: {result.text}")
+                    else:
+                        self.logger.info(f"Region {region['slug']} deleted successfully")
+                        
+                except Exception as err:
+                    self.logger.error(f"Error deleting region {region['slug']}: {str(err)}")
+                    
+                # Add small delay between deletions
+                time.sleep(0.5)
+                
+        except Exception as err:
+            self.logger.error(f"Delete regions operation failed: {str(err)}")
+            raise
+            
