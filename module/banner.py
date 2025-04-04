@@ -51,12 +51,6 @@ class BannerMigration(BaseMigration):
         if not self.list_banners:
             list_migration_banners = []
             
-            delete_query = """
-                TRUNCATE TABLE IF EXISTS internal_apps_internalapps CASCADE RESTART IDENTITY
-            """
-            
-            delete_results = self.delete_data(delete_query)
-            
             query = """
                 SELECT id, name, url, image, is_show, description FROM internal_apps_internalapps WHERE is_deleted = false
             """
