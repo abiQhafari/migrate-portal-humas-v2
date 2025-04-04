@@ -72,6 +72,7 @@ class RegionMigration(BaseMigration):
                     headers={"Authorization": f"Bearer {token}"},
                 )
             )
+            
             if result.status_code == 201:
                 return {
                     "beforeId": beforeId,
