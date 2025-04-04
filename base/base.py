@@ -76,6 +76,17 @@ class BaseMigration:
 
         return list_rows
     
+    def query_one(self, query):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(query)
+            return cursor.fetchone()
+        except Exception as e:
+            self.logger.error(f"Query error: {str(e)}")
+            raise e
+        finally:
+            cursor.close()
+    
     def save_error_log(self, module_name):
         if self.migration_errors:
             error_file = f"data/error_{module_name}.json"

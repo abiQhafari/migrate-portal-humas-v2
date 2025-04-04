@@ -3,23 +3,56 @@ from services.keycloak_service import KeycloakService
 
 import requests
 import time
+import signal
+import sys
 
 class RegionMigration(BaseMigration):
     def __init__(self, token):
         super().__init__(token)
         self.list_regions = []
+        self.is_interrupted = False
+        
+        signal.signal(signal.SIGINT, self.signal_handler)
+        signal.signal(signal.SIGTERM, self.signal_handler)
+        
+    def handle_interrupt(self, signum, frame):
+        self.logger.warning("Received interrupt signal. Saving current progress...")
+        self.is_interrupted = True
+        self.save_checkpoint()
+        sys.exit(1)
+        
+    def save_checkpoint(self):
+        if self.list_regions:
+            try:
+                self.save_json("data/regions.json", self.list_regions)
+                self.logger.info("Progress saved successfully")
+            except Exception as e:
+                self.logger.error(f"Failed to save progress: {str(e)}")
+        
 
     def make_regions(self, beforeId, territory, level, parent_id, category, description, slug, icon, address, sequence):
         try:
-            index_map = {
-                item["beforeId"]: index
-                for index, item in enumerate(self.list_regions)
-                if item is not None
-            }
-            index = index_map.get(parent_id)
-            parent_region_id = None
-            if index is not None:
-                parent_region_id = self.list_regions[index]["afterId"]
+            if parent_id is not None:
+                parent_slug = None
+                
+                old_parent = self.query_one(f"SELECT id, slug FROM regions_regions WHERE id = {parent_id} AND is_deleted = false")
+                
+                if old_parent is None:
+                    raise ValueError(f"Parent region with ID {parent_id} not found")
+                
+                parent_slug = old_parent[1]
+                
+                new_parent = KeycloakService().execute_with_retry(
+                    lambda token: requests.get(
+                        self.host + f"/api/v1/regions/{parent_slug}",
+                        headers={"Authorization": f"Bearer {token}"},
+                    )
+                )
+                
+                if new_parent.status_code != 200:
+                    raise ValueError(f"Failed to fetch parent region: {new_parent.text}")
+                
+                parent_id = new_parent.json()["data"]["id"]
                 
             payload = {
                 "name": territory if territory else category,
@@ -29,7 +62,7 @@ class RegionMigration(BaseMigration):
                 "description": description if description else "-",
                 "slug": slug,
                 "level": category.split(" ")[0].upper(),
-                "parentId": parent_region_id,
+                "parentId": parent_id,
             }
                 
             result = KeycloakService().execute_with_retry(
@@ -66,6 +99,9 @@ class RegionMigration(BaseMigration):
         existing_region_ids = {item["beforeId"] for item in self.list_regions}
         
         for level in range(4):
+            if self.is_interrupted:
+                break
+            
             query = f"SELECT id, territory, level, parent_id, category, description, slug, icon, address, sequence FROM regions_regions WHERE level = {level} AND is_deleted = false"
             
             while True:
@@ -80,11 +116,19 @@ class RegionMigration(BaseMigration):
             list_migration_regions = self.list_regions.copy()
             
             for row in results:
+                if self.is_interrupted:
+                    break
+            
                 if row[0] not in existing_region_ids:
                     try:
                         new_regions = self.make_regions(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9])
                         self.logger.info(f"Migrated region: {new_regions}")
                         list_migration_regions.append(new_regions)
+                        
+                        if len(list_migration_regions) % 10 == 0:
+                            self.save_json(file_name, list_migration_regions)
+                            self.list_regions = list_migration_regions
+                            
                     except Exception as err:
                         self.log_migration_error({
                             "id": row[0],
