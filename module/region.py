@@ -22,7 +22,7 @@ class RegionMigration(BaseMigration):
                 parent_region_id = self.list_regions[index]["afterId"]
                 
             result = KeycloakService().execute_with_retry(
-                lambda token: requests.get(
+                lambda token: requests.post(
                     self.host + "/api/v1/regions",
                     headers={"Authorization": f"Bearer {token}"},
                 )

@@ -18,7 +18,7 @@ class BannerMigration(BaseMigration):
                 "imageUrl": self.base_url + image,
                 "isActive": is_show,
                 "description": "-" if description == None else description
-            },
+            }
             
             result = KeycloakService().execute_with_retry(
                 lambda token: requests.post(
