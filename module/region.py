@@ -22,7 +22,7 @@ class RegionMigration(BaseMigration):
                 parent_region_id = self.list_regions[index]["afterId"]
                 
             payload = {
-                "name": territory,
+                "name": territory if territory else category,
                 "icon": icon if icon else "-",
                 "address": address if address else "-",
                 "sortIndex": sequence if sequence > -1 else -1,
